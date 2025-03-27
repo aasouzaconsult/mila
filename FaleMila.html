@@ -465,14 +465,14 @@
                     <h1><span class="green">Mila</span><span class="orange">gree</span></h1>
                 </div>
                 <div class="nav-links">
-                    <a href="#sobre">Sobre</a>
-                    <a href="#servicos">Serviços</a>
-                    <a href="#historias">Histórias</a>
-                    <a href="#mila">Mila IA</a>
-                    <a href="#contato">Contato</a>
+                    <a href="index.html#sobre">Sobre</a>
+                    <a href="index.html#servicos">Serviços</a>
+                    <a href="index.html#historias">Histórias</a>
+                    <a href="index.html#mila">Mila IA</a>
+                    <a href="index.html#contato">Contato</a>
                     <a href="construction.html">Área de membros</a>
                 </div>
-                <a href="#contato" class="cta-button">Fale com a Mila!</a>
+                <a href="index.html" class="cta-button">Página inicial</a>
             </nav>
         </div>
     </header>
@@ -480,140 +480,59 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="badge">Mentoria para Empreendedores</div>
-                <h2>Transforme seu negócio com a <span class="green">Mila</span><span class="orange">gree</span></h2>
-                <p>Já ajudamos mais de 200 empreendedores locais em Barueri a conseguir crédito justo e aumentar suas vendas com mentoria personalizada.</p>
-                <div class="hero-buttons">
-                    <a href="#contato" class="cta-button">Fale com a Mila!</a>
-                    <a href="construction.html" class="secondary-button">Quer ter uma Mila?</a>
-                </div>
+                <h2 style="white-space: nowrap;">Converse com a <span class="green">Mila</span> agora mesmo!</h2>
+                <p>Preencha os dados abaixo e fale com Ela para melhorar o seu negócio.</p>
+                <form id="businessForm" onsubmit="sendToWhatsApp(); return false;" style="margin-top: 30px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <div style="margin-bottom: 15px;">
+                        <label for="name">Nome:</label><br>
+                        <input type="text" id="name" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label for="company">Razão Social:</label><br>
+                        <input type="text" id="company" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label for="industry">Ramo de Atuação:</label><br>
+                        <input type="text" id="industry" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label for="email">E-mail:</label><br>
+                        <input type="email" id="email" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label for="phone">Telefone/Whatsapp:</label><br>
+                        <input type="text" id="phone" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label for="problem">Qual sua principal dificuldade no seu negócio hoje?</label><br>
+                        <textarea id="problem" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; height: 100px;"></textarea>
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit" class="cta-button">Salvar e Falar com a Mila</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
+    
+    <script>
+        function sendToWhatsApp() {
+            var name = document.getElementById('name').value;
+            var company = document.getElementById('company').value;
+            var industry = document.getElementById('industry').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var problem = document.getElementById('problem').value;
+    
+            var message = `Olá, meu nome é ${name}.\nRazão Social: ${company}\nRamo de Atuação: ${industry}\nE-mail: ${email}\nTelefone/Whatsapp: ${phone}\nMinha principal dificuldade é: ${problem}`;
+    
+            var whatsappUrl = `https://api.whatsapp.com/send?phone=5585991092304&text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
 
-    <section class="services" id="servicos">
-        <div class="container">
-            <div class="section-title">
-                <h3>Nossos Serviços</h3>
-                <p>Soluções completas para seu negócio respirar e crescer</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
-                            <path d="M20 3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h3l-1 1v2h12v-2l-1-1h3c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H4V5h16v11z"/>
-                        </svg>
-                    </div>
-                    <h4>Mentoria Gratuita</h4>
-                    <p>Receba orientação personalizada para fazer seu negócio respirar novamente.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
-                            <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
-                        </svg>
-                    </div>
-                    <h4>Acesso a Crédito</h4>
-                    <p>Conseguimos crédito justo para seu negócio, com condições especiais e sem burocracia.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 24 24">
-                            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
-                        </svg>
-                    </div>
-                    <h4>Aumento de Vendas</h4>
-                    <p>Estratégias práticas para aumentar suas vendas, com foco em WhatsApp e redes sociais.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="success-story" id="historias">
-        <div class="container">
-            <div class="story-container">
-                <div class="story-image">
-                    <img src="pastelaria.png" alt="História de sucesso - Pastelaria" />
-                </div>
-                <div class="story-content">
-                    <h3>A história de Maria, dona de pastelaria</h3>
-                    <p>Há 3 meses, Maria estava prestes a fechar as portas de sua pastelaria em Barueri. Com dívidas acumuladas e vendas estagnadas, o desespero tomou conta.</p>
-                    
-                    <div class="quote">
-                        "Pensei em vender meu fogão para pagar o aluguel."
-                    </div>
-                    
-                    <p>Até que ela conheceu a Milagree e nossa mentora virtual Mila, que transformou seu negócio:</p>
-                    
-                    <div class="story-stats">
-                        <div class="stat-item">
-                            <h4>R$27k</h4>
-                            <p>Crédito obtido</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>140%</h4>
-                            <p>Aumento nas vendas</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>2 meses</h4>
-                            <p>Para limpar o nome</p>
-                        </div>
-                    </div>
-                    
-                    <p>Hoje, a pastelaria de Maria vende 120 pastéis por dia e ela já está planejando expandir.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="mila-section" id="mila">
-        <div class="container">
-            <div class="mila-container">
-                <div class="mila-content">
-                    <div class="badge">Inteligência Artificial</div>
-                    <h3>Conheça a Mila, sua mentora virtual</h3>
-                    <p>A Mila não é mais uma IA genérica. Ela foi treinada com dados reais de 200 empreendedores de Barueri e aprendeu o que realmente funciona para negócios locais.</p>
-                    
-                    <div class="feature-list">
-                        <div class="feature-item">
-                            <div class="feature-icon">✓</div>
-                            <div>
-                                <h4>Recupera Crédito</h4>
-                                <p>Lhe auxilia na negociação de dívidas com fornecedores e cria planos para limpar seu nome em tempo recorde.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">✓</div>
-                            <div>
-                                <h4>Ensina a Vender</h4>
-                                <p>Transforma seu WhatsApp em uma máquina de vendas com estratégias práticas e eficientes.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">✓</div>
-                            <div>
-                                <h4>Fala sua Língua</h4>
-                                <p>Sem termos técnicos complicados, linguajar local, apenas orientações claras que você pode aplicar hoje.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mila-image">
-                    <img src="Mila.png" alt="Mila IA" />
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section" id="contato">
-        <div class="container">
-            <div class="cta-content">
-                <h3>Pronto para transformar seu negócio?</h3>
-                <p>Junte-se aos mais de 200 empreendedores de Barueri que já estão crescendo com a Milagree.</p>
-                <a href="FaleMila.html" class="cta-button">Fale agora com a Mila!</a>
-            </div>
-        </div>
-    </section>
+            // Limpa o formulário
+            document.getElementById('businessForm').reset();
+        }
+    </script>
 
     <footer>
         <div class="container">
@@ -653,7 +572,7 @@
                 <div class="footer-column">
                     <h4>Serviços</h4>
                     <ul>
-                        <li><a href="construction.html">Fale com a Mila</a></li>
+                        <li><a href="FaleMila.html">Fale com a Mila</a></li>
                         <li><a href="construction.html">Tenha uma Mila</a></li>
                         <li><a href="construction.html">Acesso a Crédito</a></li>
                         <li><a href="construction.html">Estratégias de Vendas</a></li>
